@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lato';
+}
+
+body {
+  background-color: #d8dbd5;
+}
+
+#green {
+  background-color: #009688;
+  height: 100px;
+}
+
+div.container {
+  position: absolute;
+  left: 10%;
+  top: 2%;
+  width: 80%;
+  height: calc(100vh - (100vh * 0.04));
+  display: flex;
+  justify-content: flex-start;
+}
+
+#parteSx {
+  width: 35%;
+  height: 100%;
+  background-color: blue;
+}
+
+#parteDx {
+  width: 65%;
+  height: 100%;
+  background-color: green;
+}
