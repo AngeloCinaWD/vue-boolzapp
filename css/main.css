@@ -2,11 +2,19 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Lato';
+  font-family: 'Lato', sans-serif;
 }
 
 body {
   background-color: #d8dbd5;
+}
+
+.greyColor {
+  color: #919191;
+}
+
+.blackColor {
+  color: #000000;
 }
 
 #green {
@@ -32,16 +40,99 @@ div.container {
 #userData {
   height: 60px;
   background-color: #ededed;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 10px;
+}
+
+#userData #imgUser {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+#userData #imgUser img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+#userData span {
+  flex: 4;
+  margin-left: 5px;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+#userComandi {
+  flex: 3;
+  text-align: right;
+}
+
+#userComandi i {
+  margin: 0 10px;
+  font-size: 22px;
 }
 
 #notifiche {
   height: 85px;
   background-color: #9de1fe;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px;
+}
+
+#notifiche #slashBell {
+  flex: 2;
+  background-color: #ffffff;
+  color: #9de1fe;
+  text-align: center;
+  font-size: 20px;
+  border-radius: 50%;
+  padding: 17px 0px;
+  margin: 0 5px;
+}
+
+#notifiche #infoNotifiche {
+  flex: 10;
+  margin-left: 5px;
+}
+
+#notifiche #infoNotifiche #riceviNotifiche {
+  font-size: 18px;
+}
+
+#notifiche #infoNotifiche a {
+  font-size: 14px;
 }
 
 #cercaChat {
   height: 50px;
   background-color: #f6f6f6;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+}
+
+#searchChat {
+  flex: 1;
+  border: 1px solid #EAEAEA;
+  background-color: #ffffff;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+#searchChat i {
+  margin-left: 10px;
+}
+
+#searchChat input {
+  border: none;
+  font-size: 12px;
+  width: 100%;
+  margin-left: 45px;
 }
 
 #allChat {
@@ -53,6 +144,41 @@ div.container {
 .Chat {
   height: 80px;
   background-color: #ffffff;
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px;
+  border-bottom: 1px solid #EAEAEA;
+}
+
+div.imgContatto {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div.imgContatto img {
+  width: 80%;
+  border-radius: 50%;
+}
+
+div.infoContatto {
+  flex: 4;
+  margin-left: 5px;
+  padding-top: 5px;
+}
+
+div.infoContatto div.nomeContatto {
+  font-size: 22px;
+  margin-bottom: 2px;
+}
+
+div.infoTime {
+  flex: 4;
+  text-align: right;
+  margin-right: 5px;
+  padding-top: 5px;
+  font-size: 14px;
 }
 
 
@@ -65,6 +191,44 @@ div.container {
   height: 60px;
   background-color: #ededed;
   border-left: 1px solid grey;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#datiContatto #imgContattoAttivo {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#datiContatto #imgContattoAttivo img {
+  width: 65%;
+  border-radius: 50%;
+}
+
+#datiContatto div#contattoAttivo {
+  flex: 8;
+}
+
+#datiContatto div#contattoAttivo div.nomeContattoAttivo {
+  font-size: 18px;
+}
+
+#datiContatto div#contattoAttivo div.ultimoAccesso {
+  font-size: 14px;
+}
+
+#comandiChat {
+  flex: 3;
+  text-align: right;
+}
+
+#comandiChat i {
+  padding-right: 10px;
+  margin: 0 5px;
+  font-size: 22px;
 }
 
 #spazioChat {
@@ -75,6 +239,21 @@ div.container {
 
 #inputMessaggio {
   height: 60px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   background-color: #f0f0f0;
   border-left: 1px solid grey;
+}
+
+#inputMessaggio i:first-of-type, #inputMessaggio i:last-of-type {
+  flex: 1;
+  font-size: 25px;
+  text-align: center;
+}
+
+#inputMessaggio input {
+  flex: 9;
+  border: none;
+  padding: 10px;
 }

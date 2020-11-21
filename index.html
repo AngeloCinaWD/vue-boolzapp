@@ -3,7 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0 ">
-        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
         <link rel="stylesheet" href="css/main.css">
         <script src="https://cdn.jsdelivr.net/npm/vue"></script>
@@ -16,21 +17,139 @@
 
       <div class="container">
           <div id="parteSx">
-            <div id="userData"></div>
-            <div id="notifiche"></div>
-            <div id="cercaChat"></div>
+
+            <div id="userData">
+              <div id="imgUser">
+                <img src="img/avatar_io.jpg" alt="">
+              </div>
+              <span class="blackColor">Nome Utente</span>
+              <div id="userComandi" class="greyColor">
+                <i class="fas fa-circle-notch"></i>
+                <i class="fas fa-comment-alt"></i>
+                <i class="fas fa-ellipsis-v"></i>
+              </div>
+            </div>
+
+            <div id="notifiche">
+              <div id="slashBell">
+                <i class="fas fa-bell-slash"></i>
+              </div>
+              <div id="infoNotifiche">
+                <div id="riceviNotifiche">
+                  Ricevi notifiche di nuovi messaggi
+                </div>
+                <a href="#" class="greyColor">Attiva notifiche desktop</a>
+              </div>
+            </div>
+
+            <div id="cercaChat">
+              <div id="searchChat">
+                <i class="fas fa-search greyColor"></i>
+                <input type="text" class="greyColor" value="" placeholder="Cerca o inizia una nuova chat">
+              </div>
+            </div>
+
             <div id="allChat">
-              <div class="Chat"></div>
-              <div class="Chat"></div>
-              <div class="Chat"></div>
-              <div class="Chat"></div>
+              <div class="Chat">
+                <div class="imgContatto">
+                  <img src="img/avatar_1.jpg" alt="">
+                </div>
+                <div class="infoContatto">
+                  <div class="nomeContatto blackColor">
+                    Michele
+                  </div>
+                  <div class="messaggioAnteprima greyColor">
+                    ok
+                  </div>
+
+                </div>
+                <div class="infoTime greyColor">
+                  20 11 2020 10:52:03
+                </div>
+              </div>
+
+              <div class="Chat">
+                <div class="imgContatto">
+                  <img src="img/avatar_2.jpg" alt="">
+                </div>
+                <div class="infoContatto">
+                  <div class="nomeContatto blackColor">
+                    Fabio
+                  </div>
+                  <div class="messaggioAnteprima greyColor">
+                    ok
+                  </div>
+
+                </div>
+                <div class="infoTime greyColor">
+                  20 11 2020 10:52:03
+                </div>
+              </div>
+
+              <div class="Chat">
+                <div class="imgContatto">
+                  <img src="img/avatar_3.jpg" alt="">
+                </div>
+                <div class="infoContatto">
+                  <div class="nomeContatto blackColor">
+                    Samuele
+                  </div>
+                  <div class="messaggioAnteprima greyColor">
+                    ok
+                  </div>
+
+                </div>
+                <div class="infoTime greyColor">
+                  20 11 2020 10:52:03
+                </div>
+              </div>
+
+              <div class="Chat">
+                <div class="imgContatto">
+                  <img src="img/avatar_4.jpg" alt="">
+                </div>
+                <div class="infoContatto">
+                  <div class="nomeContatto blackColor">
+                    Luisa
+                  </div>
+                  <div class="messaggioAnteprima greyColor">
+                    ok
+                  </div>
+
+                </div>
+                <div class="infoTime greyColor">
+                  20 11 2020 10:52:03
+                </div>
+              </div>
             </div>
 
           </div>
           <div id="parteDx">
-            <div id="datiContatto"></div>
+            <div id="datiContatto">
+              <div id="imgContattoAttivo">
+                <img src="img/avatar_4.jpg" alt="">
+              </div>
+              <div id="contattoAttivo">
+                <div class="nomeContattoAttivo blackColor">
+                  Luisa
+                </div>
+                <div class="ultimoAccesso greyColor">
+                  Ultimo accesso oggi alle 20 11 2020 10:52:03
+                </div>
+              </div>
+
+              <div id="comandiChat" class="greyColor">
+                <i class="fas fa-search"></i>
+                <i class="fas fa-paperclip"></i>
+                <i class="fas fa-ellipsis-v"></i>
+              </div>
+            </div>
             <div id="spazioChat"></div>
-            <div id="inputMessaggio"></div>
+            <div id="inputMessaggio">
+              <i class="far fa-laugh greyColor"></i>
+              <input type="text" value="" placeholder="Scrivi un messaggio">
+              <i class="fas fa-microphone greyColor"></i>
+            </div>
           </div>
         </div>
 
