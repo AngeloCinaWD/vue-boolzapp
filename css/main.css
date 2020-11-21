@@ -235,6 +235,33 @@ div.infoTime {
   height: calc(100% - 120px);
   overflow-y: auto;
   background-image: url(../img/mine.jpg);
+  display: flex;
+  flex-direction: column;
+}
+
+#spazioChat div.messageText {
+  min-width: 25%;
+  max-width: 45%;
+  word-wrap: break-word;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 5px 60px;
+}
+
+#spazioChat div.sentMessage {
+  background-color: #dcf8c6;
+  align-self: flex-end;
+}
+
+#spazioChat div.receivedMessage {
+  background-color: #ffffff;
+  align-self: flex-start;
+}
+
+.dataTime {
+  font-size: 10px;
+  text-align: right;
+  margin-top: 5px;
 }
 
 #inputMessaggio {
