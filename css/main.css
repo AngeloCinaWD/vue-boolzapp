@@ -5,6 +5,7 @@
   font-family: 'Lato', sans-serif;
 }
 
+/* regole generali */
 body {
   background-color: #d8dbd5;
 }
@@ -17,11 +18,13 @@ body {
   color: #000000;
 }
 
+/* banda verde in secondo piano */
 #green {
   background-color: #009688;
   height: 127px;
 }
 
+/* proprietà contenitore app */
 div.container {
   width: 73%;
   position: absolute;
@@ -32,11 +35,13 @@ div.container {
   justify-content: flex-start;
 }
 
+/* parte sinistra del contenitore */
 #parteSx {
   width: 30%;
   height: 100%;
 }
 
+/* top parte sx, dati utente */
 #userData {
   height: 60px;
   background-color: #ededed;
@@ -74,6 +79,7 @@ div.container {
   font-size: 22px;
 }
 
+/* riquadro attiva notifiche */
 #notifiche {
   height: 85px;
   background-color: #9de1fe;
@@ -107,6 +113,7 @@ div.container {
   font-size: 14px;
 }
 
+/* barra cerca fra le chat */
 #cercaChat {
   height: 50px;
   background-color: #f6f6f6;
@@ -122,6 +129,7 @@ div.container {
   padding: 10px;
   display: flex;
   align-items: center;
+  overflow: hidden;
 }
 
 #searchChat i {
@@ -135,6 +143,7 @@ div.container {
   margin-left: 45px;
 }
 
+/* chat contatti */
 #allChat {
   height: calc(100% - 195px);
   overflow-y: auto;
@@ -181,12 +190,13 @@ div.infoTime {
   font-size: 14px;
 }
 
-
+/* parte destra del contenitore */
 #parteDx {
   width: 70%;
   height: 100%;
 }
 
+/* top parte destra */
 #datiContatto {
   height: 60px;
   background-color: #ededed;
@@ -231,6 +241,7 @@ div.infoTime {
   font-size: 22px;
 }
 
+/* sezione centrale parte destra */
 #spazioChat {
   height: calc(100% - 120px);
   overflow-y: auto;
@@ -239,6 +250,7 @@ div.infoTime {
   flex-direction: column;
 }
 
+/* proprietà del messaggio della chat selezionata */
 #spazioChat div.messageText {
   min-width: 25%;
   max-width: 45%;
@@ -248,22 +260,25 @@ div.infoTime {
   margin: 5px 60px;
 }
 
+/* messaggio inviato*/
 #spazioChat div.sentMessage {
   background-color: #dcf8c6;
   align-self: flex-end;
 }
 
+/* messaggio ricevuto */
 #spazioChat div.receivedMessage {
   background-color: #ffffff;
   align-self: flex-start;
 }
 
-.dataTime {
+#spazioChat p.dataTime {
   font-size: 10px;
   text-align: right;
   margin-top: 5px;
 }
 
+/* barra inferiore input testo parte dx */
 #inputMessaggio {
   height: 60px;
   display: flex;
@@ -283,4 +298,57 @@ div.infoTime {
   flex: 9;
   border: none;
   padding: 10px;
+}
+
+/* media query */
+@media all and (max-width: 1179px) {
+  #userData #imgUser img, div.imgContatto img, #datiContatto #imgContattoAttivo img {
+    width: 40px;
+  }
+
+  #userData span {
+    display: none;
+  }
+}
+
+@media all and (max-width: 1400px) {
+  div.container {
+    width: 100%;
+    height: 100vh;
+    position: initial;
+  }
+
+  #green {
+    display: none;
+  }
+}
+
+@media all and (min-width: 1401px) and (max-width: 1500px) {
+  div.container {
+    width: 95%;
+    position: absolute;
+    left: 2.5%;
+    top: 2%;
+    height: calc(100vh - (100vh * 0.04));
+  }
+}
+
+@media all and (min-width: 1501px) and (max-width: 1600px) {
+  div.container {
+    width: 87%;
+    position: absolute;
+    left: 6.5%;
+    top: 2%;
+    height: calc(100vh - (100vh * 0.04));
+  }
+}
+
+@media all and (min-width: 1601px) and (max-width: 1700px) {
+  div.container {
+    width: 82%;
+    position: absolute;
+    left: 9%;
+    top: 2%;
+    height: calc(100vh - (100vh * 0.04));
+  }
 }
