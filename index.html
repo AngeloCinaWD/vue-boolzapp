@@ -61,11 +61,11 @@
                     {{contatto.nomeContatto}}
                   </p>
                   <p class="messaggioAnteprima greyColor">
-                    123456789
+                    {{contatto.messaggiChat[contatto.messaggiChat.length - 1].testo}}
                   </p>
                 </div>
                 <div class="infoTime greyColor">
-                  20 11 2020 10:52:03
+                  {{contatto.messaggiChat[contatto.messaggiChat.length - 1].timeInfo}}
                 </div>
               </div>
 
@@ -84,7 +84,7 @@
                   {{contatti[indiceContattoAttivo].nomeContatto}}
                 </div>
                 <div class="ultimoAccesso greyColor">
-                  Ultimo accesso oggi alle 20 11 2020 10:52:03
+                  Ultimo accesso oggi alle {{contatti[indiceContattoAttivo].messaggiChat[contatti[indiceContattoAttivo].messaggiChat.length - 1].timeInfo}}
                 </div>
               </div>
 

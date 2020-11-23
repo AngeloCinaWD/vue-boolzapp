@@ -30,9 +30,9 @@ var app = new Vue ({
           {
             testo: "Lo sai che ha aperto una nuova pizzeria?",
             tipo: "sentMessage",
-            timeInfo: "20 11 2020 10:52:03"
+            timeInfo: "20 11 2020 10:52:15"
           }
-        ]
+        ],
       },
       {
         nomeContatto: "Fabio",
@@ -134,5 +134,4 @@ var app = new Vue ({
       this.indiceContattoAttivo = indiceAttivo;
     }
   }
-
 });
