@@ -57,12 +57,12 @@
                   <img :src="contatto.immagineContatto" alt="">
                 </div>
                 <div class="infoContatto">
-                  <div class="nomeContatto blackColor">
+                  <p class="nomeContatto blackColor">
                     {{contatto.nomeContatto}}
-                  </div>
-                  <div class="messaggioAnteprima greyColor">
-                    ok
-                  </div>
+                  </p>
+                  <p class="messaggioAnteprima greyColor">
+                    123456789
+                  </p>
                 </div>
                 <div class="infoTime greyColor">
                   20 11 2020 10:52:03
@@ -99,14 +99,9 @@
             <div id="spazioChat">
 
               <!-- esempio messaggio inviato dall'utente -->
-              <div v-for="(messageSent) in contatti[indiceContattoAttivo].messaggiChatInviati" class="messageText sentMessage">
-                <p>{{messageSent}}</p>
-                <p class="dataTime greyColor">20/11/2020 00.00</p>
-              </div>
-              <!-- esempio messaggio ricevuto dall'utente -->
-              <div v-for="(messageReceived) in contatti[indiceContattoAttivo].messaggiChatRicevuti" class="messageText receivedMessage">
-                <p>{{messageReceived}}</p>
-                <p class="dataTime greyColor">20/11/2020 00.00</p>
+              <div v-for="(message) in contatti[indiceContattoAttivo].messaggiChat" :class="['messageText', message.tipo]">
+                <p>{{message.testo}}</p>
+                <p class="dataTime greyColor">{{message.timeInfo}}</p>
               </div>
 
             </div>
