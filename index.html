@@ -15,7 +15,7 @@
       <div id="green">
         </div>
       <!-- contenitore app -->
-      <div class="container">
+      <div id="app" class="container">
         <!-- parte sinistra del contenitore -->
           <div id="parteSx">
             <!-- top parte sinistra -->
@@ -52,13 +52,13 @@
             <!-- spazio chat contatti -->
             <div id="allChat">
               <!-- chat singola -->
-              <div class="Chat">
+              <div v-for="(contatto, i) in contatti"  @click="attivaContatto(i)" class="Chat">
                 <div class="imgContatto">
-                  <img src="img/avatar_1.jpg" alt="">
+                  <img :src="contatto.immagineContatto" alt="">
                 </div>
                 <div class="infoContatto">
                   <div class="nomeContatto blackColor">
-                    Michele
+                    {{contatto.nomeContatto}}
                   </div>
                   <div class="messaggioAnteprima greyColor">
                     ok
@@ -69,56 +69,6 @@
                 </div>
               </div>
 
-              <div class="Chat">
-                <div class="imgContatto">
-                  <img src="img/avatar_2.jpg" alt="">
-                </div>
-                <div class="infoContatto">
-                  <div class="nomeContatto blackColor">
-                    Fabio
-                  </div>
-                  <div class="messaggioAnteprima greyColor">
-                    ok
-                  </div>
-                </div>
-                <div class="infoTime greyColor">
-                  20 11 2020 10:52:03
-                </div>
-              </div>
-
-              <div class="Chat">
-                <div class="imgContatto">
-                  <img src="img/avatar_3.jpg" alt="">
-                </div>
-                <div class="infoContatto">
-                  <div class="nomeContatto blackColor">
-                    Samuele
-                  </div>
-                  <div class="messaggioAnteprima greyColor">
-                    ok
-                  </div>
-                </div>
-                <div class="infoTime greyColor">
-                  20 11 2020 10:52:03
-                </div>
-              </div>
-
-              <div class="Chat">
-                <div class="imgContatto">
-                  <img src="img/avatar_4.jpg" alt="">
-                </div>
-                <div class="infoContatto">
-                  <div class="nomeContatto blackColor">
-                    Luisa
-                  </div>
-                  <div class="messaggioAnteprima greyColor">
-                    ok
-                  </div>
-                </div>
-                <div class="infoTime greyColor">
-                  20 11 2020 10:52:03
-                </div>
-              </div>
             </div>
           </div>
 
@@ -127,11 +77,11 @@
             <!-- top parte destra -->
             <div id="datiContatto">
               <div id="imgContattoAttivo">
-                <img src="img/avatar_4.jpg" alt="">
+                <img :src="contatti[indiceContattoAttivo].immagineContatto" alt="">
               </div>
               <div id="contattoAttivo">
                 <div class="nomeContattoAttivo blackColor">
-                  Luisa
+                  {{contatti[indiceContattoAttivo].nomeContatto}}
                 </div>
                 <div class="ultimoAccesso greyColor">
                   Ultimo accesso oggi alle 20 11 2020 10:52:03
@@ -149,13 +99,13 @@
             <div id="spazioChat">
 
               <!-- esempio messaggio inviato dall'utente -->
-              <div class="messageText sentMessage">
-                <p>Lo sai che ha aperto una nuova pizzeria?</p>
+              <div v-for="(messageSent) in contatti[indiceContattoAttivo].messaggiChatInviati" class="messageText sentMessage">
+                <p>{{messageSent}}</p>
                 <p class="dataTime greyColor">20/11/2020 00.00</p>
               </div>
               <!-- esempio messaggio ricevuto dall'utente -->
-              <div class="messageText receivedMessage">
-                <p>Si ma preferirei andare al cinema</p>
+              <div v-for="(messageReceived) in contatti[indiceContattoAttivo].messaggiChatRicevuti" class="messageText receivedMessage">
+                <p>{{messageReceived}}</p>
                 <p class="dataTime greyColor">20/11/2020 00.00</p>
               </div>
 
