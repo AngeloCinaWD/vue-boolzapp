@@ -1,6 +1,7 @@
 var app = new Vue ({
   el: "#app",
   data: {
+    inputMessaggio: "",
     indiceContattoAttivo: 0,
     contatti: [
       {
@@ -39,28 +40,28 @@ var app = new Vue ({
         immagineContatto: "img/avatar_2.jpg",
         messaggiChat: [
           {
-            testo: "sai che ha aperto una nuova pizzeria?",
+            testo: "pizzeria?",
             tipo: "sentMessage",
             timeInfo: "20 11 2020 10:52:03"
           },
           {
-            testo: "Si ma preferirei andare al cinema",
+            testo: "cinema",
             tipo: "receivedMessage",
             timeInfo: "20 11 2020 10:52:03"
           },
           {
-            testo: "Lo sai che ha aperto una nuova pizzeria?",
+            testo: "pizzeria?",
             tipo: "sentMessage",
             timeInfo: "20 11 2020 10:52:03"
           },
           {
-            testo: "Si ma preferirei andare al cinema",
+            testo: "cinema",
             tipo: "receivedMessage",
             timeInfo: "20 11 2020 10:52:03"
           },
           {
-            testo: "Lo sai che ha aperto una nuova pizzeria?",
-            tipo: "sentMessage",
+            testo: "cinema",
+            tipo: "receivedMessage",
             timeInfo: "20 11 2020 10:52:03"
           }
         ]
@@ -70,23 +71,23 @@ var app = new Vue ({
         immagineContatto: "img/avatar_3.jpg",
         messaggiChat: [
           {
-            testo: "Lo sai che ha aperto una nuova pizzeria?",
+            testo: "Lo sai ?",
             tipo: "sentMessage",
             timeInfo: "20 11 2020 10:52:03"
           },
           {
-            testo: "Si ma preferirei andare al cinema",
+            testo: "Si",
             tipo: "receivedMessage",
             timeInfo: "20 11 2020 10:52:03"
           },
           {
-            testo: "Lo sai che ha aperto una nuova pizzeria?",
+            testo: "preferirei andare al cinema",
+            tipo: "receivedMessage",
+            timeInfo: "20 11 2020 10:52:03"
+          },
+          {
+            testo: "al cinema",
             tipo: "sentMessage",
-            timeInfo: "20 11 2020 10:52:03"
-          },
-          {
-            testo: "Si ma preferirei andare al cinema",
-            tipo: "receivedMessage",
             timeInfo: "20 11 2020 10:52:03"
           },
           {
@@ -101,27 +102,27 @@ var app = new Vue ({
         immagineContatto: "img/avatar_4.jpg",
         messaggiChat: [
           {
-            testo: "Lo sai che ha aperto una nuova pizzeria?",
+            testo: "fjsfjhhhh?",
             tipo: "sentMessage",
             timeInfo: "20 11 2020 10:52:03"
           },
           {
-            testo: "Si ma preferirei andare al cinema",
+            testo: "ma",
             tipo: "receivedMessage",
             timeInfo: "20 11 2020 10:52:03"
           },
           {
-            testo: "Lo sai che ha aperto una nuova pizzeria?",
+            testo: "La fessa che tieni",
             tipo: "sentMessage",
             timeInfo: "20 11 2020 10:52:03"
           },
           {
-            testo: "Si ma preferirei andare al cinema",
+            testo: "a soreta",
             tipo: "receivedMessage",
             timeInfo: "20 11 2020 10:52:03"
           },
           {
-            testo: "Lo sai che ha aperto una nuova pizzeria?",
+            testo: "mammt",
             tipo: "sentMessage",
             timeInfo: "20 11 2020 10:52:03"
           }
@@ -132,6 +133,12 @@ var app = new Vue ({
   methods: {
     attivaContatto: function (indiceAttivo) {
       this.indiceContattoAttivo = indiceAttivo;
+    },
+    inviaMessaggio: function () {
+      this.contatti[this.indiceContattoAttivo].messaggiChat.push({testo: this.inputMessaggio, tipo: "sentMessage", timeInfo: "20 11 2020 10:52:15"});
+      this.inputMessaggio = "";
     }
+
+
   }
 });
