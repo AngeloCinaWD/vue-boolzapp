@@ -124,13 +124,22 @@ var app = new Vue ({
     attivaContatto: function (indiceAttivo) {
       this.indiceContattoAttivo = indiceAttivo;
     },
+
+    dataTime: function () {
+      var today = new Date();
+      var date = today.getDate()+' '+(today.getMonth()+1)+' '+today.getFullYear();
+      var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+      var dateTime = date+' '+time;
+      return dateTime;
+    },
+
     inviaMessaggio: function () {
-      this.contatti[this.indiceContattoAttivo].messaggiChat.push({testo: this.inputMessaggio, tipo: "sentMessage", timeInfo: "20 11 2020 10:52:15"});
+      this.contatti[this.indiceContattoAttivo].messaggiChat.push({testo: this.inputMessaggio, tipo: "sentMessage", timeInfo: this.dataTime ()});
       this.inputMessaggio = "";
     },
 
     messaggioRisposta: function () {
-      this.contatti[this.indiceContattoAttivo].messaggiChat.push({testo: "ok", tipo: "receivedMessage", timeInfo: "20 11 2020 10:52:15"});
+      this.contatti[this.indiceContattoAttivo].messaggiChat.push({testo: "ok", tipo: "receivedMessage", timeInfo: this.dataTime ()});
     },
 
     ritardoRisposta: function () {

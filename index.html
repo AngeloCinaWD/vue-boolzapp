@@ -109,7 +109,7 @@
             <div id="inputMessaggio">
               <i class="far fa-laugh greyColor"></i>
               <input type="text" value="" placeholder="Scrivi un messaggio" v-model="inputMessaggio"  @keyup.enter= "inviaMessaggio (); ritardoRisposta ()" >
-              <i class="fas fa-microphone greyColor"></i>
+              <i class="fas fa-microphone greyColor" @click= "inviaMessaggio (); ritardoRisposta ()"></i>
             </div>
           </div>
         </div>
