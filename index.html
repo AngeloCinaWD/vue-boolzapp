@@ -108,7 +108,7 @@
             <!-- barra inferiore input testo parte dx -->
             <div id="inputMessaggio">
               <i class="far fa-laugh greyColor"></i>
-              <input type="text" value="" placeholder="Scrivi un messaggio" v-model="inputMessaggio" @keyup.enter="inviaMessaggio">
+              <input type="text" value="" placeholder="Scrivi un messaggio" v-model="inputMessaggio"  @keyup.enter= "inviaMessaggio (); ritardoRisposta ()" >
               <i class="fas fa-microphone greyColor"></i>
             </div>
           </div>

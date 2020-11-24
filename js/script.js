@@ -22,16 +22,6 @@ var app = new Vue ({
             testo: "Lo sai che ha aperto una nuova pizzeria?",
             tipo: "sentMessage",
             timeInfo: "20 11 2020 10:52:03"
-          },
-          {
-            testo: "Si ma preferirei andare al cinema",
-            tipo: "receivedMessage",
-            timeInfo: "20 11 2020 10:52:03"
-          },
-          {
-            testo: "Lo sai che ha aperto una nuova pizzeria?",
-            tipo: "sentMessage",
-            timeInfo: "20 11 2020 10:52:15"
           }
         ],
       },
@@ -137,7 +127,16 @@ var app = new Vue ({
     inviaMessaggio: function () {
       this.contatti[this.indiceContattoAttivo].messaggiChat.push({testo: this.inputMessaggio, tipo: "sentMessage", timeInfo: "20 11 2020 10:52:15"});
       this.inputMessaggio = "";
+    },
+
+    messaggioRisposta: function () {
+      this.contatti[this.indiceContattoAttivo].messaggiChat.push({testo: "ok", tipo: "receivedMessage", timeInfo: "20 11 2020 10:52:15"});
+    },
+
+    ritardoRisposta: function () {
+      setTimeout (this.messaggioRisposta, 1000);
     }
+
 
 
   }
