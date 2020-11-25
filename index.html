@@ -45,14 +45,14 @@
             <!-- barra ricerca fra le chat -->
             <div id="cercaChat">
               <div id="searchChat">
-                <i class="fas fa-search greyColor"></i>
-                <input type="text" class="greyColor" value="" placeholder="Cerca o inizia una nuova chat">
+                <i class="fas fa-search greyColor" @click= "cercaChat"></i>
+                <input type="text" class="greyColor" placeholder="Cerca o inizia una nuova chat" v-model="inputSearch" @keyup.enter= "cercaChat">
               </div>
             </div>
             <!-- spazio chat contatti -->
             <div id="allChat">
               <!-- chat singola -->
-              <div v-for="(contatto, i) in contatti"  @click="attivaContatto(i)" class="Chat">
+              <div v-for="(contatto, i) in contatti" v-if="contatto.visibile" @click="attivaContatto(i)" class="Chat">
                 <div class="imgContatto">
                   <img :src="contatto.immagineContatto" alt="">
                 </div>
