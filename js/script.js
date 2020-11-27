@@ -147,6 +147,7 @@ var app = new Vue ({
   methods: {
     attivaContatto: function (indiceAttivo) {
       this.indiceContattoAttivo = indiceAttivo;
+      this.scrollDown();
     },
 
     dataTime: function () {
@@ -162,13 +163,14 @@ var app = new Vue ({
       this.contatti[this.indiceContattoAttivo].messaggiChat.push({testo: this.inputMessaggio, tipo: "sentMessage", timeInfo: this.dataTime (), opzioniMessaggio: "eliminaMessaggioNo"});
       this.inputMessaggio = "";
       this.ritardoRisposta();
+      this.scrollDown();
     },
 
     messaggioRisposta: function () {
       if (this.inputMessaggio != "")
       this.lastOnline = this.dataTime ();
       this.contatti[this.indiceContattoAttivo].messaggiChat.push({testo: "ok", tipo: "receivedMessage", timeInfo: this.dataTime (), opzioniMessaggio: "eliminaMessaggioNo"});
-      this.inputMessaggio = "";
+      this.scrollDown();
     },
 
     ritardoRisposta: function () {
@@ -201,6 +203,13 @@ var app = new Vue ({
 
     deleteMessage: function (i) {
       this.contatti[this.indiceContattoAttivo].messaggiChat.splice(i, 1);
+    },
+
+    scrollDown: function() {
+      setTimeout(function(){
+        let chat = document.getElementById("spazioChat");
+        chat.scrollTop = chat.scrollHeight;
+      }, 1);
     }
 
   }
