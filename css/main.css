@@ -257,6 +257,27 @@ div.infoTime {
   flex-direction: column;
 }
 
+/* dropdown per eliminare messaggio */
+#spazioChat div.messageText>div {
+  text-align: right;
+}
+
+.opzioni {
+  display: none;
+}
+
+#spazioChat div.messageText:hover .opzioni {
+  display: inline-block;
+}
+
+.eliminaMessaggioNo {
+  display: none;
+}
+
+.eliminaMessaggioSi {
+  display: block;
+}
+
 /* proprietà del messaggio della chat selezionata */
 #spazioChat div.messageText {
   min-width: 25%;
@@ -279,6 +300,7 @@ div.infoTime {
   align-self: flex-start;
 }
 
+/* informazioni temporali del messaggio */
 #spazioChat p.dataTime {
   font-size: 10px;
   text-align: right;

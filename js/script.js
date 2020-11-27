@@ -13,17 +13,20 @@ var app = new Vue ({
           {
             testo: "Lo sai che ha aperto una nuova pizzeria?",
             tipo: "sentMessage",
-            timeInfo: "20 11 2020 10:52:03"
+            timeInfo: "20 11 2020 10:52:03",
+            opzioniMessaggio: "eliminaMessaggioNo"
           },
           {
             testo: "Si ma preferirei andare al cinema",
             tipo: "receivedMessage",
-            timeInfo: "20 11 2020 10:52:03"
+            timeInfo: "20 11 2020 10:52:03",
+            opzioniMessaggio: "eliminaMessaggioNo"
           },
           {
             testo: "Lo sai che ha aperto una nuova pizzeria?",
             tipo: "sentMessage",
-            timeInfo: "20 11 2020 10:52:03"
+            timeInfo: "20 11 2020 10:52:03",
+            opzioniMessaggio: "eliminaMessaggioNo"
           }
         ],
       },
@@ -35,27 +38,32 @@ var app = new Vue ({
           {
             testo: "pizzeria?",
             tipo: "sentMessage",
-            timeInfo: "20 11 2020 10:52:03"
+            timeInfo: "20 11 2020 10:52:03",
+            opzioniMessaggio: "eliminaMessaggioNo"
           },
           {
             testo: "cinema",
             tipo: "receivedMessage",
-            timeInfo: "20 11 2020 10:52:03"
+            timeInfo: "20 11 2020 10:52:03",
+            opzioniMessaggio: "eliminaMessaggioNo"
           },
           {
             testo: "pizzeria?",
             tipo: "sentMessage",
-            timeInfo: "20 11 2020 10:52:03"
+            timeInfo: "20 11 2020 10:52:03",
+            opzioniMessaggio: "eliminaMessaggioNo"
           },
           {
             testo: "cinema",
             tipo: "receivedMessage",
-            timeInfo: "20 11 2020 10:52:03"
+            timeInfo: "20 11 2020 10:52:03",
+            opzioniMessaggio: "eliminaMessaggioNo"
           },
           {
             testo: "cinema",
             tipo: "receivedMessage",
-            timeInfo: "20 11 2020 10:52:03"
+            timeInfo: "20 11 2020 10:52:03",
+            opzioniMessaggio: "eliminaMessaggioNo"
           }
         ]
       },
@@ -67,27 +75,32 @@ var app = new Vue ({
           {
             testo: "Lo sai ?",
             tipo: "sentMessage",
-            timeInfo: "20 11 2020 10:52:03"
+            timeInfo: "20 11 2020 10:52:03",
+            opzioniMessaggio: "eliminaMessaggioNo"
           },
           {
             testo: "Si",
             tipo: "receivedMessage",
-            timeInfo: "20 11 2020 10:52:03"
+            timeInfo: "20 11 2020 10:52:03",
+            opzioniMessaggio: "eliminaMessaggioNo"
           },
           {
             testo: "preferirei andare al cinema",
             tipo: "receivedMessage",
-            timeInfo: "20 11 2020 10:52:03"
+            timeInfo: "20 11 2020 10:52:03",
+            opzioniMessaggio: "eliminaMessaggioNo"
           },
           {
             testo: "al cinema",
             tipo: "sentMessage",
-            timeInfo: "20 11 2020 10:52:03"
+            timeInfo: "20 11 2020 10:52:03",
+            opzioniMessaggio: "eliminaMessaggioNo"
           },
           {
             testo: "Lo sai che ha aperto una nuova pizzeria?",
             tipo: "sentMessage",
-            timeInfo: "20 11 2020 10:52:03"
+            timeInfo: "20 11 2020 10:52:03",
+            opzioniMessaggio: "eliminaMessaggioNo"
           }
         ]
       },
@@ -99,27 +112,32 @@ var app = new Vue ({
           {
             testo: "fjsfjhhhh?",
             tipo: "sentMessage",
-            timeInfo: "20 11 2020 10:52:03"
+            timeInfo: "20 11 2020 10:52:03",
+            opzioniMessaggio: "eliminaMessaggioNo"
           },
           {
             testo: "ma",
             tipo: "receivedMessage",
-            timeInfo: "20 11 2020 10:52:03"
+            timeInfo: "20 11 2020 10:52:03",
+            opzioniMessaggio: "eliminaMessaggioNo"
           },
           {
             testo: "La fessa che tieni",
             tipo: "sentMessage",
-            timeInfo: "20 11 2020 10:52:03"
+            timeInfo: "20 11 2020 10:52:03",
+            opzioniMessaggio: "eliminaMessaggioNo"
           },
           {
             testo: "a soreta",
             tipo: "receivedMessage",
-            timeInfo: "20 11 2020 10:52:03"
+            timeInfo: "20 11 2020 10:52:03",
+            opzioniMessaggio: "eliminaMessaggioNo"
           },
           {
             testo: "mammt",
             tipo: "sentMessage",
-            timeInfo: "20 11 2020 10:52:03"
+            timeInfo: "20 11 2020 10:52:03",
+            opzioniMessaggio: "eliminaMessaggioNo"
           }
         ]
       }
@@ -140,30 +158,19 @@ var app = new Vue ({
 
     inviaMessaggio: function () {
       if (this.inputMessaggio != "")
-      this.contatti[this.indiceContattoAttivo].messaggiChat.push({testo: this.inputMessaggio, tipo: "sentMessage", timeInfo: this.dataTime ()});
+      this.contatti[this.indiceContattoAttivo].messaggiChat.push({testo: this.inputMessaggio, tipo: "sentMessage", timeInfo: this.dataTime (), opzioniMessaggio: "eliminaMessaggioNo"});
       // this.inputMessaggio = "";
     },
 
     messaggioRisposta: function () {
       if (this.inputMessaggio != "")
-      this.contatti[this.indiceContattoAttivo].messaggiChat.push({testo: "ok", tipo: "receivedMessage", timeInfo: this.dataTime ()});
+      this.contatti[this.indiceContattoAttivo].messaggiChat.push({testo: "ok", tipo: "receivedMessage", timeInfo: this.dataTime (), opzioniMessaggio: "eliminaMessaggioNo"});
       this.inputMessaggio = "";
     },
 
     ritardoRisposta: function () {
       setTimeout (this.messaggioRisposta, 1000);
     },
-
-    // cercaChat: function () {
-    //   console.log(this.inputSearch);
-    //   if (this.inputSearch != "")
-    //   var inputinserito = this.inputSearch;
-    //   this.contatti = this.contatti.filter((element) => {
-    //     // if (element.nomeContatto.includes(inputinserito)) {
-    //       return element.nomeContatto.includes(inputinserito)
-    //     // }
-    //   });
-    // }
 
     cercaChat: function(){
       this.contatti.forEach((elemento) => {
@@ -179,9 +186,19 @@ var app = new Vue ({
           elemento.visibile = false;
         }
       });
+    },
+
+    displayMessaggio: function(i) {
+      if (this.contatti[this.indiceContattoAttivo].messaggiChat[i].opzioniMessaggio === "eliminaMessaggioNo") {
+        this.contatti[this.indiceContattoAttivo].messaggiChat[i].opzioniMessaggio = "eliminaMessaggioSi";
+      } else {
+        this.contatti[this.indiceContattoAttivo].messaggiChat[i].opzioniMessaggio = "eliminaMessaggioNo"
+      };
+    },
+
+    deleteMessage: function (i) {
+      this.contatti[this.indiceContattoAttivo].messaggiChat.splice(i, 1);
     }
-
-
 
   }
 });

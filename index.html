@@ -99,7 +99,13 @@
             <div id="spazioChat">
 
               <!-- esempio messaggio inviato dall'utente -->
-              <div v-for="(message) in contatti[indiceContattoAttivo].messaggiChat" :class="['messageText', message.tipo]">
+              <div v-for="(message, i) in contatti[indiceContattoAttivo].messaggiChat" :class="['messageText', message.tipo]">
+                <div>
+                  <i class="opzioni fas fa-chevron-down" @click= "displayMessaggio(i)"></i>
+                  <div :class="message.opzioniMessaggio" @click= "deleteMessage(i)">
+                    Elimina messaggio
+                  </div>
+                </div>
                 <p>{{message.testo}}</p>
                 <p class="dataTime greyColor">{{message.timeInfo}}</p>
               </div>
