@@ -4,6 +4,7 @@ var app = new Vue ({
     inputMessaggio: "",
     inputSearch: "",
     indiceContattoAttivo: 0,
+    lastOnline:"20 11 2020 10:52:03",
     contatti: [
       {
         nomeContatto: "Michele",
@@ -159,11 +160,13 @@ var app = new Vue ({
     inviaMessaggio: function () {
       if (this.inputMessaggio != "")
       this.contatti[this.indiceContattoAttivo].messaggiChat.push({testo: this.inputMessaggio, tipo: "sentMessage", timeInfo: this.dataTime (), opzioniMessaggio: "eliminaMessaggioNo"});
-      // this.inputMessaggio = "";
+      this.inputMessaggio = "";
+      this.ritardoRisposta();
     },
 
     messaggioRisposta: function () {
       if (this.inputMessaggio != "")
+      this.lastOnline = this.dataTime ();
       this.contatti[this.indiceContattoAttivo].messaggiChat.push({testo: "ok", tipo: "receivedMessage", timeInfo: this.dataTime (), opzioniMessaggio: "eliminaMessaggioNo"});
       this.inputMessaggio = "";
     },
@@ -188,7 +191,7 @@ var app = new Vue ({
       });
     },
 
-    displayMessaggio: function(i) {
+    displayOpzioniMessaggio: function(i) {
       if (this.contatti[this.indiceContattoAttivo].messaggiChat[i].opzioniMessaggio === "eliminaMessaggioNo") {
         this.contatti[this.indiceContattoAttivo].messaggiChat[i].opzioniMessaggio = "eliminaMessaggioSi";
       } else {

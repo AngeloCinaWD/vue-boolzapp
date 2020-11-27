@@ -182,12 +182,12 @@ div#allChat div.infoContatto p.nomeContatto {
   margin-bottom: 2px;
 }
 
-div#allChat div.infoContatto p.messaggioAnteprima {
+/* div#allChat div.infoContatto p.messaggioAnteprima {
   white-space: nowrap;
   width: 100px;
   overflow: hidden;
   text-overflow: ellipsis;
-}
+} */
 
 div.infoTime {
   flex: 4;

@@ -60,12 +60,12 @@
                   <p class="nomeContatto blackColor">
                     {{contatto.nomeContatto}}
                   </p>
-                  <p class="messaggioAnteprima greyColor">
-                    {{contatto.messaggiChat[contatto.messaggiChat.length - 1].testo}}
+                  <p class="messaggioAnteprima greyColor" v-if="contatto.messaggiChat.length >= 1">
+                    {{contatto.messaggiChat[contatto.messaggiChat.length - 1].testo.substring (0,10)}}...
                   </p>
                 </div>
                 <div class="infoTime greyColor">
-                  {{contatto.messaggiChat[contatto.messaggiChat.length - 1].timeInfo}}
+                  {{lastOnline}}
                 </div>
               </div>
 
@@ -84,7 +84,7 @@
                   {{contatti[indiceContattoAttivo].nomeContatto}}
                 </div>
                 <div class="ultimoAccesso greyColor">
-                  Ultimo accesso oggi alle {{contatti[indiceContattoAttivo].messaggiChat[contatti[indiceContattoAttivo].messaggiChat.length - 1].timeInfo}}
+                  Ultimo accesso il {{lastOnline}}
                 </div>
               </div>
 
@@ -101,7 +101,7 @@
               <!-- esempio messaggio inviato dall'utente -->
               <div v-for="(message, i) in contatti[indiceContattoAttivo].messaggiChat" :class="['messageText', message.tipo]">
                 <div>
-                  <i class="opzioni fas fa-chevron-down" @click= "displayMessaggio(i)"></i>
+                  <i class="opzioni fas fa-chevron-down" @click= "displayOpzioniMessaggio(i)"></i>
                   <div :class="message.opzioniMessaggio" @click= "deleteMessage(i)">
                     Elimina messaggio
                   </div>
@@ -114,8 +114,8 @@
             <!-- barra inferiore input testo parte dx -->
             <div id="inputMessaggio">
               <i class="far fa-laugh greyColor"></i>
-              <input type="text" value="" placeholder="Scrivi un messaggio" v-model="inputMessaggio"  @keyup.enter= "inviaMessaggio (); ritardoRisposta ()" >
-              <i class="fas fa-microphone greyColor" @click= "inviaMessaggio (); ritardoRisposta ()"></i>
+              <input type="text" value="" placeholder="Scrivi un messaggio" v-model="inputMessaggio"  @keyup.enter= "inviaMessaggio" >
+              <i class="fas fa-microphone greyColor" @click= "inviaMessaggio"></i>
             </div>
           </div>
         </div>
