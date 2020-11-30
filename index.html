@@ -16,109 +16,109 @@
         </div>
       <!-- contenitore app -->
       <div id="app" class="container">
-        <!-- parte sinistra del contenitore -->
-          <div id="parteSx">
-            <!-- top parte sinistra -->
-            <div id="userData">
-              <div id="imgUser">
-                <img src="img/avatar_io.jpg" alt="">
-              </div>
-              <span class="blackColor">Nome Utente</span>
-              <div id="userComandi" class="greyColor">
-                <i class="fas fa-circle-notch"></i>
-                <i class="fas fa-comment-alt"></i>
-                <i class="fas fa-ellipsis-v"></i>
-              </div>
+      <!-- parte sinistra del contenitore -->
+        <div id="parteSx">
+          <!-- top parte sinistra -->
+          <div id="userData">
+            <div id="imgUser">
+              <img src="img/avatar_io.jpg" alt="">
             </div>
-            <!-- attiva notifiche -->
-            <div id="notifiche">
-              <div id="slashBell">
-                <i class="fas fa-bell-slash"></i>
-              </div>
-              <div id="infoNotifiche">
-                <div id="riceviNotifiche">
-                  Ricevi notifiche di nuovi messaggi
-                </div>
-                <a href="#" class="greyColor">Attiva notifiche desktop</a>
-              </div>
-            </div>
-            <!-- barra ricerca fra le chat -->
-            <div id="cercaChat">
-              <div id="searchChat">
-                <i class="fas fa-search greyColor" @click= "cercaChat"></i>
-                <input type="text" class="greyColor" placeholder="Cerca o inizia una nuova chat" v-model="inputSearch" @keyup= "cercaChat">
-              </div>
-            </div>
-            <!-- spazio chat contatti -->
-            <div id="allChat">
-              <!-- chat singola -->
-              <div v-for="(contatto, i) in contatti" v-if="contatto.visibile" @click="attivaContatto(i)" class="Chat">
-                <div class="imgContatto">
-                  <img :src="contatto.immagineContatto" alt="">
-                </div>
-                <div class="infoContatto">
-                  <p class="nomeContatto blackColor">
-                    {{contatto.nomeContatto}}
-                  </p>
-                  <p class="messaggioAnteprima greyColor" v-if="contatto.messaggiChat.length >= 1">
-                    {{contatto.messaggiChat[contatto.messaggiChat.length - 1].testo.substring (0,10)}}...
-                  </p>
-                </div>
-                <div class="infoTime greyColor">
-                  {{lastOnline}}
-                </div>
-              </div>
-
+            <span class="blackColor">Nome Utente</span>
+            <div id="userComandi" class="greyColor">
+              <i class="fas fa-circle-notch"></i>
+              <i class="fas fa-comment-alt"></i>
+              <i class="fas fa-ellipsis-v"></i>
             </div>
           </div>
-
-          <!-- parte destra del contenitore -->
-          <div id="parteDx">
-            <!-- top parte destra -->
-            <div id="datiContatto">
-              <div id="imgContattoAttivo">
-                <img :src="contatti[indiceContattoAttivo].immagineContatto" alt="">
+          <!-- attiva notifiche -->
+          <div id="notifiche">
+            <div id="slashBell">
+              <i class="fas fa-bell-slash"></i>
+            </div>
+            <div id="infoNotifiche">
+              <div id="riceviNotifiche">
+                Ricevi notifiche di nuovi messaggi
               </div>
-              <div id="contattoAttivo">
-                <div class="nomeContattoAttivo blackColor">
-                  {{contatti[indiceContattoAttivo].nomeContatto}}
-                </div>
-                <div class="ultimoAccesso greyColor">
-                  Ultimo accesso il {{lastOnline}}
-                </div>
+              <a href="#" class="greyColor">Attiva notifiche desktop</a>
+            </div>
+          </div>
+          <!-- barra ricerca fra le chat -->
+          <div id="cercaChat">
+            <div id="searchChat">
+              <i class="fas fa-search greyColor" @click= "cercaChat"></i>
+              <input type="text" class="greyColor" placeholder="Cerca o inizia una nuova chat" v-model="inputSearch" @keyup= "cercaChat">
+            </div>
+          </div>
+          <!-- spazio chat contatti -->
+          <div id="allChat">
+            <!-- chat singola -->
+            <div v-for="(contatto, i) in contatti" v-if="contatto.visibile" @click="attivaContatto(i)" class="Chat">
+              <div class="imgContatto">
+                <img :src="contatto.immagineContatto" alt="">
               </div>
-
-              <div id="comandiChat" class="greyColor">
-                <i class="fas fa-search"></i>
-                <i class="fas fa-paperclip"></i>
-                <i class="fas fa-ellipsis-v"></i>
+              <div class="infoContatto">
+                <p class="nomeContatto blackColor">
+                  {{contatto.nomeContatto}}
+                </p>
+                <p class="messaggioAnteprima greyColor" v-if="contatto.messaggiChat.length >= 1">
+                  {{contatto.messaggiChat[contatto.messaggiChat.length - 1].testo.substring (0,10)}}...
+                </p>
+              </div>
+              <div class="infoTime greyColor">
+                {{lastOnline}}
               </div>
             </div>
 
-            <!-- spazio principale parte destra con la chat selezionata -->
-            <div id="spazioChat">
-
-              <!-- esempio messaggio inviato dall'utente -->
-              <div v-for="(message, i) in contatti[indiceContattoAttivo].messaggiChat" :class="['messageText', message.tipo]">
-                <div>
-                  <i class="opzioni fas fa-chevron-down" @click= "displayOpzioniMessaggio(i)"></i>
-                  <div :class="message.opzioniMessaggio" @click= "deleteMessage(i)">
-                    Elimina messaggio
-                  </div>
-                </div>
-                <p>{{message.testo}}</p>
-                <p class="dataTime greyColor">{{message.timeInfo}}</p>
-              </div>
-
-            </div>
-            <!-- barra inferiore input testo parte dx -->
-            <div id="inputMessaggio">
-              <i class="far fa-laugh greyColor"></i>
-              <input type="text" value="" placeholder="Scrivi un messaggio" v-model="inputMessaggio"  @keyup.enter= "inviaMessaggio" >
-              <i class="fas fa-microphone greyColor" @click= "inviaMessaggio"></i>
-            </div>
           </div>
         </div>
+
+        <!-- parte destra del contenitore -->
+        <div id="parteDx">
+          <!-- top parte destra -->
+          <div id="datiContatto">
+            <div id="imgContattoAttivo">
+              <img :src="contatti[indiceContattoAttivo].immagineContatto" alt="">
+            </div>
+            <div id="contattoAttivo">
+              <div class="nomeContattoAttivo blackColor">
+                {{contatti[indiceContattoAttivo].nomeContatto}}
+              </div>
+              <div class="ultimoAccesso greyColor">
+                Ultimo accesso il {{lastOnline}}
+              </div>
+            </div>
+
+            <div id="comandiChat" class="greyColor">
+              <i class="fas fa-search"></i>
+              <i class="fas fa-paperclip"></i>
+              <i class="fas fa-ellipsis-v"></i>
+            </div>
+          </div>
+
+          <!-- spazio principale parte destra con la chat selezionata -->
+          <div id="spazioChat">
+
+            <!-- esempio messaggio inviato dall'utente -->
+            <div v-for="(message, i) in contatti[indiceContattoAttivo].messaggiChat" :class="['messageText', message.tipo]">
+              <div>
+                <i class="opzioni fas fa-chevron-down" @click= "displayOpzioniMessaggio(i)"></i>
+                <div :class="message.opzioniMessaggio" @click= "deleteMessage(i)">
+                  Elimina messaggio
+                </div>
+              </div>
+              <p>{{message.testo}}</p>
+              <p class="dataTime greyColor">{{message.timeInfo}}</p>
+            </div>
+
+          </div>
+          <!-- barra inferiore input testo parte dx -->
+          <div id="inputMessaggio">
+            <i class="far fa-laugh greyColor"></i>
+            <input type="text" value="" placeholder="Scrivi un messaggio" v-model="inputMessaggio"  @keyup.enter= "inviaMessaggio" >
+            <i class="fas fa-microphone greyColor" @click= "inviaMessaggio"></i>
+          </div>
+        </div>
+      </div>
 
 
 
